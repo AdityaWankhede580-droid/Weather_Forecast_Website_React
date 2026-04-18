@@ -2,6 +2,7 @@
 A sleek, real-time weather application built with React.js and OpenWeatherMap API. This project demonstrates how to handle API calls, manage state, and implement responsive design with CSS.
 
 Features
+
 Live Weather Data: Fetches current temperature and weather conditions based on your location.
 
 5-Day Forecast: Displays a clear, daily forecast for the week ahead.
