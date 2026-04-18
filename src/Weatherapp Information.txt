@@ -1,0 +1,35 @@
+where is wednesday and Thursday ?
+
+Because the API returns a 5-day forecast starting from the current moment, the days you see depend on when you open the app.
+
+Today is Friday, April 10, 2026.
+
+Why Wednesday and Thursday are missing:
+The API Range: OpenWeatherMap's free "5-day forecast" only looks 120 hours into the future.
+
+The Timeline:
+
+Fri: Today (Current Weather)
+
+Sat: Day 1
+
+Sun: Day 2
+
+Mon: Day 3
+
+Tue: Day 4
+
+Wed: Day 5 (This is the very end of the data).
+
+If you are only seeing up to Tuesday, it’s likely because the "Wednesday" data point hasn't been reached yet in the 5-day window, or it is currently being filtered out by the i % 8 === 0 logic.
+
+How to see more data:
+The code i % 8 === 0 picks one weather report for every 24 hours. If you want to see the "next" possible day, you can try changing the filter slightly, but remember: the API cannot see the past. It will never show last Wednesday or Thursday.
+
+How to make the list scrollable:
+If the days are "hiding" off the side of your screen, add this to your .forecast section in FirstApp.css:
+
+Quick Debug Check:
+Look at the dates: Are the days you see consecutive (Fri, Sat, Sun...)? If yes, the app is working perfectly!
+
+Wait for Wednesday: As time moves forward, the "window" moves. By next Tuesday, your app will show Wednesday, Thursday, and Friday!
